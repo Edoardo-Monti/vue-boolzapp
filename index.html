@@ -48,7 +48,7 @@
                     <div class="flex my-account bg-white"
                     v-for="(element) in contacts">
                         <div class="flex container-info">
-                            <img :class="avatar" src="{{element.avatar}}" alt="avatar_1">
+                            <img :class="avatar" :src="element.avatar" alt="avatar_1">
                             <div class="info"> 
                                 <h3>{{element.name}}</h3>
                                 <span>Ultimo messaggio inviato</span>
