@@ -175,10 +175,16 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+
+            textChat:""
         }
     },
     methods: {
-
+        addElem(){
+                ``
+            this.textChat=""
+            
+        }
     }
 }).mount("#app")

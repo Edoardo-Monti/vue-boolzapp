@@ -48,7 +48,7 @@
                     <div class="flex my-account bg-white"
                     v-for="(element) in contacts">
                         <div class="flex container-info">
-                            <img :class="avatar" :src="element.avatar" alt="avatar_1">
+                            <img class="avatar" :src="element.avatar" alt="avatar_1">
                             <div class="info"> 
                                 <h3>{{element.name}}</h3>
                                 <span>Ultimo messaggio inviato</span>
@@ -107,10 +107,10 @@
                         <div class="cont-chat">
 
                             <!-- Messaggio inviato -->
-                            <div class="sent">
+                            <div v-if="" class="sent">
                                 <div class="sent-cont">
                                     <div>
-                                        <p>Hai portato il cane fuori ?</p> 
+                                        <p>{{textChat}}</p> 
                                     </div>
                                     <span>16.15</span>   
                                 </div>
@@ -134,7 +134,8 @@
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
                         <div class="div2 flex">
-                            <input type="text" placeholder="  Scrivi un messaggio">
+                            <input type="text" placeholder="  Scrivi un messaggio"
+                            v-model="textChat" @KeyUp.enter="addElem">
                         </div>
                         <div class="div3 flex">
                             <i class="fa-solid fa-microphone"></i>
