@@ -19,18 +19,19 @@
 #container{
     width: 80%;
     height: 90vh;
-    border: 1px dashed blue;
+    /* border: 1px dashed blue; */
     display: flex;
 }
 
 #container-left{
     width: 30%;
-    border: 1px dashed red
+    /* border: 1px dashed red */
+    background-color: white;
 }
 
 #container-right{
     width: 70%;
-    border: 1px dashed black
+    border-left: 1px solid rgb(153, 153, 153)
 }
 
 .my-account{
@@ -41,7 +42,6 @@
 
 img{
     border-radius: 50%;
-    /* width: 100%; */
     padding: 10px;
     align-items: center;
 }
@@ -61,6 +61,12 @@ img{
 
 .w-20{
     width: 20%;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+}
+.w-10{
+    width: 10%;
     justify-content: space-between;
     align-items: center;
     padding-right: 10px;
@@ -117,7 +123,7 @@ a{
     justify-content: center;
 }
 
-input{
+#container-left input{
     height: 100%;
     width: 90%;
     border: none;
@@ -126,11 +132,6 @@ input{
 .container-info{
     width: 80%;
 }
-
-/* .avatar{
-    width: 20%;
-    height: 20%;
-} */
 
 .info{
     width: 70%;
@@ -150,4 +151,40 @@ input{
     padding: 5px;
     font-size: 10px;
     color: lightgray;
+}
+
+#container-right .info span{
+    font-size: 10px;
+    color: black;
+}
+
+.chat{
+    height: 87%;
+    background-image: url(../img/mine.jpg);
+}
+
+.chat-text{
+    height: 7%;
+    border: 1px dashed black;
+    align-items: center;
+    background-color: lightgray;
+}
+
+.div1, .div3{
+    width: 10%;
+    justify-content: center;
+}
+
+.div1 i, .div3 i{
+    font-size: 20px;
+}
+
+.div2{
+    width: 80%;
+}
+
+.div2 input{
+    width: 100%;
+    height: 50px;
+    border: none;
 }
