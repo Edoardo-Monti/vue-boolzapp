@@ -34,7 +34,69 @@
 }
 
 .my-account{
-    height: 7%;
+    height: 6%;
+    justify-content: space-between;
     border: 1px dashed black
 }
 
+img{
+    border-radius: 50%;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+}
+
+.my-name{
+    padding: 23px 0;
+    font-size: 13px;
+}
+
+.bg-lightgrey{
+    background-color: lightgray;
+}
+
+.w-20{
+    width: 20%;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.fa-solid{
+    color: grey;
+    
+}
+
+.notification{
+    height: 8%;
+    background-color: lightskyblue;
+    align-items: center;
+}
+
+.rounded{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 10px;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.rounded i{
+    color: lightskyblue;
+    font-size: 20px;
+}
+
+h4{
+    font-size: 12px;
+}
+
+a{
+    font-size: 11px;
+    color: grey;
+}
+
+.notification div:nth-child(2){
+    margin-left: 20px;
+}
