@@ -45,11 +45,12 @@
                     </div>
 
                     <!--------------------- Utenti ----------------------->
-                    <div class="flex my-account bg-white">
+                    <div class="flex my-account bg-white"
+                    v-for="(element) in contacts">
                         <div class="flex container-info">
-                            <img class="avatar" src="./assets/img/avatar_1.jpg" alt="avatar_1">
+                            <img :class="avatar" src="{{element.avatar}}" alt="avatar_1">
                             <div class="info"> 
-                                <h3>Michele</h3>
+                                <h3>{{element.name}}</h3>
                                 <span>Ultimo messaggio inviato</span>
                             </div>    
                         </div>
@@ -58,7 +59,7 @@
                         </div>
                     </div>
 
-                    <div class="flex my-account bg-white">
+                    <!-- <div class="flex my-account bg-white">
                         <div class="flex container-info">
                             <img class="avatar" src="./assets/img/avatar_2.jpg" alt="avatar_1">
                             <div class="info"> 
@@ -82,10 +83,9 @@
                         <div class="time">
                             <span>12:00</span>
                         </div>
-                    </div>
-                    
-                
+                    </div>     -->
                 </div>
+
                 <div id="container-right">
                     <div class="flex my-account bg-lightgrey">
                         <div class="flex">
@@ -102,8 +102,32 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
-                    <div class="chat">
+                    <div class="chat flex">
 
+                        <div class="cont-chat">
+
+                            <!-- Messaggio inviato -->
+                            <div class="sent">
+                                <div class="sent-cont">
+                                    <div>
+                                        <p>Hai portato il cane fuori ?</p> 
+                                    </div>
+                                    <span>16.15</span>   
+                                </div>
+                            </div>
+                            
+                            <!-- Mesaaggio ricevuto -->
+                            <div class="received">
+                                <div class="received-cont">
+                                    <div>
+                                        <p>si l'ho fatto</p>
+                                    </div>
+                                    <span>16.50</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        
                     </div>
                     <div class="chat-text flex">
                         <div class="div1 flex">

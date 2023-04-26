@@ -52,7 +52,7 @@ img{
 }
 
 .bg-lightgrey{
-    background-color: lightgray;
+    background-color: rgb(243 238 234);
 }
 
 .bg-white{
@@ -161,14 +161,81 @@ a{
 .chat{
     height: 87%;
     background-image: url(../img/mine.jpg);
+    align-items: center;
+    justify-content: center;
 }
 
 .chat-text{
     height: 7%;
-    border: 1px dashed black;
+    /* border: 1px dashed black; */
     align-items: center;
-    background-color: lightgray;
+    background-color: rgb(243 238 234);
 }
+
+.cont-chat{
+    width: 80%;
+    height: 90%;
+    /* border: 1px solid black; */
+    position: relative;
+}
+
+.sent{
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: end
+}
+
+.sent-cont{
+    background-color: lightgreen;
+    width: 40%;
+    height: 100%;
+    padding-left: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+}
+
+.sent-cont span{
+    font-size: 10px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    
+}
+
+.received{
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: start
+}
+
+.received-cont{
+    background-color: rgb(238, 238, 238);
+    width: 40%;
+    height: 100%;
+    padding-left: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+}
+
+.received-cont span{
+    font-size: 10px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    
+}
+
+
 
 .div1, .div3{
     width: 10%;
@@ -188,3 +255,5 @@ a{
     height: 50px;
     border: none;
 }
+
+
