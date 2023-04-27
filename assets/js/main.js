@@ -178,7 +178,8 @@ createApp({
                 }
             ],
 
-            textChat:""
+            textChat:"",
+            textReceived:"okk"
         }
     },
     methods: {
@@ -187,9 +188,23 @@ createApp({
                 message: this.textChat,
                 status: 'sent'
             }
-            this.contacts[this.active].messages.push(userText)
+            
+
+            if(this.contacts[this.active].messages.push(userText)){
+                this.timer()
+            }
+            
             this.textChat=""
             
         },
+        timer(){
+            setTimeout(() =>{
+                let responce={
+                    message: this.textReceived,
+                    status: 'received'
+                }
+                this.contacts[this.active].messages.push(responce)
+            }, 1000)
+        }
     }
 }).mount("#app")
