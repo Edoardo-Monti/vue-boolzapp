@@ -81,7 +81,7 @@ createApp({
                         }
                     ],
                 },
-                /*{
+                {
                     name: 'Alessandro B.',
                     avatar: './assets/img/avatar_4.jpg',
                     visible: false,
@@ -98,7 +98,7 @@ createApp({
                         }
                     ],
                 },
-                {
+                /*{
                     name: 'Alessandro L.',
                     avatar: './assets/img/avatar_5.jpg',
                     visible: false,

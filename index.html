@@ -106,11 +106,12 @@
                     <div class="chat flex">
 
                         <div class="cont-chat" v-for="(element, i) in contacts"
-                        v-show="(i == active)">
+                        v-show="(i == active)"
+                        >
 
                             <!-- Messaggio inviato -->
-                            <div  class="sent">
-                                <div class="sent-cont">
+                            <div  class="sent" v-if="(i == active) ? 'sent' : '' ">
+                                <div class="sent-cont" v-if="(i == active) ? 'sent-cont' : '' ">
                                     <div>
                                         <p>{{element.messages[0].message}}</p> 
                                     </div>
@@ -118,18 +119,18 @@
                                 </div>
                             </div>
 
-                            <div  class="sent">
-                                <div class="sent-cont">
+                            <div  class="sent" v-if="(i == active) ? 'sent' : '' ">
+                                <div class="sent-cont" v-if="(i == active) ? 'sent-cont' : '' ">
                                     <div>
-                                        <p>{{element.messages[1].message}}}</p>
+                                        <p>{{element.messages[1].message}}</p>
                                     </div>
                                     <span>{{element.messages[1].date}}</span>
                                 </div>
                             </div>
                             
                             <!-- Mesaaggio ricevuto -->
-                            <div class="received">
-                                <div class="received-cont">
+                            <div class="received" v-if="(i == active) ? 'received' : '' ">
+                                <div class="received-cont" v-if="(i == active) ? 'eceived-cont' : '' ">
                                     <div>
                                         <p>{{element.messages[2].message}}</p>
                                     </div>
