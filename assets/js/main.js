@@ -183,13 +183,13 @@ createApp({
     },
     methods: {
         addElem(){
-                ``
+            let userText={
+                message: this.textChat,
+                status: 'sent'
+            }
+            this.contacts[this.active].messages.push(userText)
             this.textChat=""
             
         },
-
-        clickElem(){
-            
-        }
     }
 }).mount("#app")
