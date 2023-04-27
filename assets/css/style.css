@@ -40,6 +40,11 @@
     /* border: 1px dashed black */
 }
 
+.my-account:hover{
+    filter: brightness(0.9);
+    cursor: pointer;
+}
+
 img{
     border-radius: 50%;
     padding: 10px;
