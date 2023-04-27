@@ -13,6 +13,7 @@ const {createApp} = Vue
 createApp({
     data() {
         return {
+            active: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -36,7 +37,7 @@ createApp({
                         }
                     ],
                 },
-               /* {
+                {
                     name: 'Fabio',
                     avatar: './assets/img/avatar_2.jpg',
                     visible: false,
@@ -80,7 +81,7 @@ createApp({
                         }
                     ],
                 },
-                {
+                /*{
                     name: 'Alessandro B.',
                     avatar: './assets/img/avatar_4.jpg',
                     visible: false,
@@ -187,9 +188,8 @@ createApp({
             
         },
 
-        // clickElem(){
-        //     let iSee = this.visible
-        //     iSee = true
-        // }
+        clickElem(){
+            
+        }
     }
 }).mount("#app")

@@ -46,9 +46,8 @@
 
                     <!--------------------- Utenti ----------------------->
                     <div class="flex my-account bg-white"
-                    v-for="(element) in contacts"
-                    @click="clickElem"
-                    >
+                    v-for="(element, index) in contacts"
+                    @click="(active = index)">
                         <div class="flex container-info">
                             <img class="avatar" :src="element.avatar" :alt="element.name">
                             <div class="info"> 
@@ -89,7 +88,7 @@
                 </div>
 
                 <div id="container-right">
-                    <div class="flex my-account bg-lightgrey">
+                    <div class="flex my-account bg-lightgrey" >
                         <div class="flex w-50">
                             <img src="./assets/img/avatar_1.jpg" alt="avatar">
                             <div class="info"> 
@@ -106,8 +105,8 @@
                     </div>
                     <div class="chat flex">
 
-                        <div :class="cont-chat" v-for="(element) in contacts"
-                        v-if="visible">
+                        <div class="cont-chat" v-for="(element, i) in contacts"
+                        v-show="(i == active)">
 
                             <!-- Messaggio inviato -->
                             <div  class="sent">
@@ -122,9 +121,9 @@
                             <div  class="sent">
                                 <div class="sent-cont">
                                     <div>
-                                        <p>{{element.messages[1].message}}</p> 
+                                        <p>{{element.messages[1].message}}}</p>
                                     </div>
-                                    <span>{{element.messages[1].date}}</span>   
+                                    <span>{{element.messages[1].date}}</span>
                                 </div>
                             </div>
                             
