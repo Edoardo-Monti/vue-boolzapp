@@ -90,9 +90,9 @@
                 <div id="container-right">
                     <div class="flex my-account bg-lightgrey" >
                         <div class="flex w-50">
-                            <img src="./assets/img/avatar_1.jpg" alt="avatar">
+                            <img :src="contacts[active].avatar" alt="avatar">
                             <div class="info"> 
-                                <h3>Michele</h3>
+                                <h3>{{contacts[active].name}}</h3>
                                 <span>Ultimo accesso oggi alle 12:00</span>
                             </div> 
                             
@@ -105,39 +105,39 @@
                     </div>
                     <div class="chat flex">
 
-                        <div class="cont-chat" v-for="(element, i) in contacts"
-                        v-show="(i == active)"
-                        >
-
-                            <!-- Messaggio inviato -->
-                            <div  class="sent" v-if="(i == active) ? 'sent' : '' ">
-                                <div class="sent-cont" v-if="(i == active) ? 'sent-cont' : '' ">
-                                    <div>
-                                        <p>{{element.messages[0].message}}</p> 
+                        <div class="cont-chat" >
+                            <div v-for="(element, i) in contacts[active].messages">
+                                     <!-- Messaggio inviato -->
+                                    <div  class="sent" v-if="(element.status === 'sent')">
+                                        <div class="sent-cont">
+                                            <div>
+                                                <p>{{element.message}}</p> 
+                                            </div>
+                                            <span>{{element.date}}</span>   
+                                        </div>
                                     </div>
-                                    <span>{{element.messages[0].date}}</span>   
-                                </div>
-                            </div>
 
-                            <div  class="sent" v-if="(i == active) ? 'sent' : '' ">
-                                <div class="sent-cont" v-if="(i == active) ? 'sent-cont' : '' ">
-                                    <div>
-                                        <p>{{element.messages[1].message}}</p>
+                                    
+                                    <!-- Mesaaggio ricevuto -->
+                                    <div class="received" v-else>
+                                        <div class="received-cont" v-else>
+                                            <div>
+                                                <p>{{element.message}}</p>
+                                            </div>
+                                            <span>{{element.date}}</span>
+                                        </div>
                                     </div>
-                                    <span>{{element.messages[1].date}}</span>
-                                </div>
-                            </div>
-                            
-                            <!-- Mesaaggio ricevuto -->
-                            <div class="received" v-if="(i == active) ? 'received' : '' ">
-                                <div class="received-cont" v-if="(i == active) ? 'eceived-cont' : '' ">
-                                    <div>
-                                        <p>{{element.messages[2].message}}</p>
+                            </div>                                                   
+                                <!-- <div :class="(element.status === 'sent')?'sent':'received' ">
+                                    <div :class="{'sent-cont':element.status === 'sent', 
+                                    'received-cont':element.status === 'received'}">
+                                        <div>
+                                            <p>{{element.message}}</p>
+                                        </div>
+                                        <span>{{element.date}}</span>
                                     </div>
-                                    <span>{{element.messages[2].date}}</span>
-                                </div>
-                            </div>
-
+                                </div> -->
+                                                            
                         </div>
                         
                     </div>

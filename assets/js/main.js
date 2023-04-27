@@ -98,7 +98,7 @@ createApp({
                         }
                     ],
                 },
-                /*{
+                {
                     name: 'Alessandro L.',
                     avatar: './assets/img/avatar_5.jpg',
                     visible: false,
@@ -157,7 +157,7 @@ createApp({
                 {
                     name: 'Davide',
                     avatar: './assets/img/avatar_8.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -175,7 +175,7 @@ createApp({
                             status: 'received'
                         }
                     ],
-                }*/
+                }
             ],
 
             textChat:""
