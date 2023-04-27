@@ -46,9 +46,11 @@
 
                     <!--------------------- Utenti ----------------------->
                     <div class="flex my-account bg-white"
-                    v-for="(element) in contacts">
+                    v-for="(element) in contacts"
+                    @click="clickElem"
+                    >
                         <div class="flex container-info">
-                            <img class="avatar" :src="element.avatar" alt="avatar_1">
+                            <img class="avatar" :src="element.avatar" :alt="element.name">
                             <div class="info"> 
                                 <h3>{{element.name}}</h3>
                                 <span>Ultimo messaggio inviato</span>
@@ -88,10 +90,10 @@
 
                 <div id="container-right">
                     <div class="flex my-account bg-lightgrey">
-                        <div class="flex">
-                            <img src="./assets/img/avatar_3.jpg" alt="avatar">
+                        <div class="flex w-50">
+                            <img src="./assets/img/avatar_1.jpg" alt="avatar">
                             <div class="info"> 
-                                <h3>Samuele</h3>
+                                <h3>Michele</h3>
                                 <span>Ultimo accesso oggi alle 12:00</span>
                             </div> 
                             
@@ -104,15 +106,25 @@
                     </div>
                     <div class="chat flex">
 
-                        <div class="cont-chat">
+                        <div :class="cont-chat" v-for="(element) in contacts"
+                        v-if="visible">
 
                             <!-- Messaggio inviato -->
-                            <div v-if="" class="sent">
+                            <div  class="sent">
                                 <div class="sent-cont">
                                     <div>
-                                        <p>{{textChat}}</p> 
+                                        <p>{{element.messages[0].message}}</p> 
                                     </div>
-                                    <span>16.15</span>   
+                                    <span>{{element.messages[0].date}}</span>   
+                                </div>
+                            </div>
+
+                            <div  class="sent">
+                                <div class="sent-cont">
+                                    <div>
+                                        <p>{{element.messages[1].message}}</p> 
+                                    </div>
+                                    <span>{{element.messages[1].date}}</span>   
                                 </div>
                             </div>
                             
@@ -120,9 +132,9 @@
                             <div class="received">
                                 <div class="received-cont">
                                     <div>
-                                        <p>si l'ho fatto</p>
+                                        <p>{{element.messages[2].message}}</p>
                                     </div>
-                                    <span>16.50</span>
+                                    <span>{{element.messages[2].date}}</span>
                                 </div>
                             </div>
 
