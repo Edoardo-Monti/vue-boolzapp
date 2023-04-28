@@ -55,7 +55,7 @@ createApp({
                 {
                     name: 'Fabio',
                     avatar: './assets/img/avatar_2.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '20/03/2020 16:30:00',
@@ -77,7 +77,7 @@ createApp({
                 {
                     name: 'Samuele',
                     avatar: './assets/img/avatar_3.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '28/03/2020 10:10:40',
@@ -99,7 +99,7 @@ createApp({
                 {
                     name: 'Alessandro B.',
                     avatar: './assets/img/avatar_4.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -116,7 +116,7 @@ createApp({
                 {
                     name: 'Alessandro L.',
                     avatar: './assets/img/avatar_5.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -133,7 +133,7 @@ createApp({
                 {
                     name: 'Claudia',
                     avatar: './assets/img/avatar_6.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -155,7 +155,7 @@ createApp({
                 {
                     name: 'Federico',
                     avatar: './assets/img/avatar_7.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -194,7 +194,8 @@ createApp({
             ],
 
             textChat:"",
-            textReceived:"okk"
+            textReceived:"okk",
+            searchPerson:""
         }
     },
     methods: {
@@ -222,6 +223,17 @@ createApp({
                 }
                 this.contacts[this.active].messages.push(responce)
             }, 1000)
+        },
+        search(){
+
+            this.contacts.forEach((element, i) => {
+                if(element.name.startsWith(this.searchPerson)){
+                element.visible = true;
+                } else {
+                element.visible = false;
+                }
+                });
+                this.searchPerson="";
         }
     }
 }).mount("#app")

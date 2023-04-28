@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzapp Web</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-    
+
     <div id="app">
 
         <div class="bg-gradient">
@@ -41,19 +45,20 @@
                         <div class="flex">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchPerson"
+                        @KeyUp.enter="search">
                     </div>
 
                     <!--------------------- Utenti ----------------------->
-                    <div class="flex my-account bg-white"
-                    v-for="(element, index) in contacts"
-                    @click="(active = index)">
+                    <div class="flex my-account bg-white" v-for="(element, index) in contacts"
+                        @click="(active = index)"
+                        v-show="(contacts[index].visible == true)">
                         <div class="flex container-info">
                             <img class="avatar" :src="element.avatar" :alt="element.name">
-                            <div class="info"> 
+                            <div class="info">
                                 <h3>{{element.name}}</h3>
                                 <span>Ultimo messaggio inviato</span>
-                            </div>    
+                            </div>
                         </div>
                         <div class="time">
                             <span>12:00</span>
@@ -88,14 +93,14 @@
                 </div>
 
                 <div id="container-right">
-                    <div class="flex my-account bg-lightgrey" >
+                    <div class="flex my-account bg-lightgrey">
                         <div class="flex w-50">
                             <img :src="contacts[active].avatar" alt="avatar">
-                            <div class="info"> 
+                            <div class="info">
                                 <h3>{{contacts[active].name}}</h3>
                                 <span>Ultimo accesso oggi alle 12:00</span>
-                            </div> 
-                            
+                            </div>
+
                         </div>
                         <div class="flex w-10">
                             <i class="fa-solid fa-magnifying-glass"></i>
@@ -104,30 +109,30 @@
                         </div>
                     </div>
                     <div class="chat flex">
-
-                        <div class="cont-chat" >
+                        <div class="cont-chat">
                             <div v-for="(element, i) in contacts[active].messages">
-                                     <!-- Messaggio inviato -->
-                                    <div  class="sent" v-if="(element.status === 'sent')">
-                                        <div class="sent-cont">
-                                            <div>
-                                                <p>{{element.message}}</p> 
-                                            </div>
-                                            <span>{{element.date}}</span>   
+                                <!-- Messaggio inviato -->
+                                <div class="sent" v-if="(element.status === 'sent')">
+                                    <div class="sent-cont">
+                                        <div>
+                                            <p>{{element.message}}</p>
                                         </div>
+                                        <span>{{element.date}}</span>
                                     </div>
+                                </div>
 
-                                    
-                                    <!-- Mesaaggio ricevuto -->
-                                    <div class="received" v-else>
-                                        <div class="received-cont" v-else>
-                                            <div>
-                                                <p>{{element.message}}</p>
-                                            </div>
-                                            <span>{{element.date}}</span>
+
+                                <!-- Mesaaggio ricevuto -->
+                                <div class="received" v-else>
+                                    <div class="received-cont" v-else>
+                                        <div>
+                                            <p>{{element.message}}</p>
                                         </div>
+                                        <span>{{element.date}}</span>
                                     </div>
-                            </div>                                                   
+                                </div>
+                                <div>
+                                </div>
                                 <!-- <div :class="(element.status === 'sent')?'sent':'received' ">
                                     <div :class="{'sent-cont':element.status === 'sent', 
                                     'received-cont':element.status === 'received'}">
@@ -135,44 +140,35 @@
                                             <p>{{element.message}}</p>
                                         </div>
                                         <span>{{element.date}}</span>
-                                    </div>
-                                </div> -->
-                                                            
+                                    </div>-->
+                            </div>
+
+
+
                         </div>
-                        
                     </div>
                     <div class="chat-text flex">
                         <div class="div1 flex">
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
                         <div class="div2 flex">
-                            <input type="text" placeholder="  Scrivi un messaggio"
-                            v-model="textChat" @KeyUp.enter="addElem">
+                            <input type="text" placeholder="  Scrivi un messaggio" v-model="textChat"
+                                @KeyUp.enter="addElem">
                         </div>
                         <div class="div3 flex">
                             <i class="fa-solid fa-microphone"></i>
                         </div>
                     </div>
                 </div>
+
             </div>
+
+
 
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./assets/js/main.js"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
