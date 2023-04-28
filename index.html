@@ -52,7 +52,7 @@
                     <!--------------------- Utenti ----------------------->
                     <div class="flex my-account bg-white" v-for="(element, index) in contacts"
                         @click="(active = index)"
-                        v-show="(contacts[index].visible == true)">
+                        v-show="(element.visible == true)">
                         <div class="flex container-info">
                             <img class="avatar" :src="element.avatar" :alt="element.name">
                             <div class="info">
