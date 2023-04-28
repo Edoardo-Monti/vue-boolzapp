@@ -225,15 +225,20 @@ createApp({
             }, 1000)
         },
         search(){
+            let searchStr = this.searchPerson.toLowerCase();
 
             this.contacts.forEach((element, i) => {
-                if(element.name.startsWith(this.searchPerson)){
+                let name = element.name.toLowerCase();
+
+                if (name.startsWith(searchStr)) {
                 element.visible = true;
                 } else {
                 element.visible = false;
                 }
-                });
-                this.searchPerson="";
+
+            });
+            
+            this.searchPerson = "";
         }
     }
 }).mount("#app")
