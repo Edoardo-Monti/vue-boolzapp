@@ -238,7 +238,6 @@ createApp({
 
             });
             
-            this.searchPerson = "";
         }
     }
 }).mount("#app")
